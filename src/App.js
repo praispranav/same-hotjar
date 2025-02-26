@@ -2,6 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [arr, setarr] = useState([]);
+
+  useEffect(() => {
+    const ab = [];
+    for(let x =0;x< 5000;x++){
+      ab.push(x);
+    }
+    setarr(ab);
+  },[])
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +26,15 @@ function App() {
         >
           Learn React
         </a>
+
+      {
+        arr.map((a)=>(
+          <div>
+            <p>{a}</p>
+            <button>Submit {a}</button>
+          </div>
+        ))
+      }
       </header>
     </div>
   );
